@@ -47,3 +47,9 @@ class Canvas: PKCanvasView {
         }
     }
 }
+
+extension Canvas: PKCanvasViewDelegate {
+    func canvasViewDidEndUsingTool(_ canvasView: PKCanvasView) {
+        print("here")
+    }
+}

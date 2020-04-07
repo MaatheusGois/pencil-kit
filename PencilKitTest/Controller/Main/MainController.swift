@@ -16,10 +16,13 @@ class MainController: UIViewController {
         return Draws.getExamples()
     }
     
-    private lazy var collectionViewDataSource = MainCollectionDataSource(draws: drawsTest,
-                                                                         collectionView: collectionView)
-    private lazy var collectionViewDelegate = MainCollectionDelegate(viewController: self,
-                                                             draws: drawsTest)
+    private lazy var collectionViewDataSource =
+        MainCollectionDataSource(draws: drawsTest,
+                                 collectionView: collectionView)
+    
+    private lazy var collectionViewDelegate =
+        MainCollectionDelegate(viewController: self,
+                               draws: drawsTest)
     
     override func viewDidLoad() {
         super.viewDidLoad()

@@ -22,10 +22,18 @@ class DrawController: UIViewController {
     
     func setUp() {
         setUpView()
+        setupImage()
     }
+    
     func setUpView() {
         view.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
         view.addSubview(canvasView)
+    }
+    
+    func setupImage() {
+        if let image = draw?.image {
+            imageView.image = image
+        }
     }
     
     override func viewDidAppear(_ animated: Bool) {
