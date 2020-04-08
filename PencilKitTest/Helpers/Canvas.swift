@@ -10,14 +10,17 @@ import PencilKit
 
 class Canvas: PKCanvasView {
     weak var view: UIView!
+    weak var imageView: UIImageView!
+    lazy var canvasDelegate = CanvasDelegate(imageView: imageView, view: view)
     
     override init(frame: CGRect) {
         super.init(frame: frame)
     }
-
-    convenience init(view: UIView) {
+    
+    convenience init(view: UIView, imageView: UIImageView) {
         self.init(frame: view.frame)
         self.view = view
+        self.imageView = imageView
         setUp()
     }
     
@@ -26,15 +29,17 @@ class Canvas: PKCanvasView {
     }
     
     func setUp() {
-        minimumZoomScale = 1
-        maximumZoomScale = 5
-                
-    
+//        minimumZoomScale = 1
+//        maximumZoomScale = 5
+//        bouncesZoom = false
+        
         allowsFingerDrawing = true
         isRulerActive = false
         backgroundColor = .clear
         isOpaque = false
         contraints()
+        
+        self.delegate = canvasDelegate
     }
     
     func contraints() {
@@ -50,18 +55,26 @@ class Canvas: PKCanvasView {
     }
 }
 
-extension Canvas: PKCanvasViewDelegate {
-    func canvasViewDidEndUsingTool(_ canvasView: PKCanvasView) {
-        print("here")
+class CanvasDelegate: NSObject, PKCanvasViewDelegate {
+    var imageView: UIImageView!
+    weak var view: UIView!
+    
+    init(imageView: UIImageView, view: UIView) {
+        self.imageView = imageView
+        self.view = view
     }
-}
-
-extension Canvas: UIScrollViewDelegate {
+    
     func viewForZooming(in scrollView: UIScrollView) -> UIView? {
-        return view
+        return imageView
     }
     
     func scrollViewDidZoom(_ scrollView: UIScrollView) {
-        print(scrollView)
+        
+        let offsetX: CGFloat = max((scrollView.bounds.size.width - scrollView.contentSize.width) * 0.5, 0.0)
+        let offsetY: CGFloat = max((scrollView.bounds.size.height - scrollView.contentSize.height) * 0.5, 0.0)
+//        imageView.frame.size = CGSize(width: self.view.bounds.width * scrollView.zoomScale, height: self.view.bounds.height * scrollView.zoomScale)
+        
+        imageView.center = CGPoint(x: scrollView.contentSize.width * 0.5 + offsetX, y: scrollView.contentSize.height * 0.5 + offsetY)
     }
+    
 }

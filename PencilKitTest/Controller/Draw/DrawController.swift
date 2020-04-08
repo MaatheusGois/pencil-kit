@@ -12,7 +12,7 @@ import PencilKit
 class DrawController: UIViewController {
     
     @IBOutlet weak var imageView: UIImageView!
-    lazy var canvasView: Canvas = Canvas(view: view)
+    lazy var canvasView: Canvas = Canvas(view: view, imageView: imageView)
     var draw: Draw?
     
     override func viewDidLoad() {
@@ -32,7 +32,6 @@ class DrawController: UIViewController {
     
     func setupImage() {
         if let image = draw?.image {
-            canvasView.addSubview(imageView)
             imageView.image = image
         }
     }
@@ -49,6 +48,19 @@ class DrawController: UIViewController {
         toolPiker.setVisible(true, forFirstResponder: canvasView)
         toolPiker.addObserver(canvasView)
         canvasView.becomeFirstResponder()
+    }
+    
+    @IBAction func save(_ sender: Any) {
+        let annotationImage =  canvasView.drawing.image(from: imageView.bounds, scale: 1.0)
+        guard let image = imageView.image else { return }
+        let joinedImage = image.mergeWith(topImage: annotationImage)
+        shareImage(image: joinedImage)
+    }
+    
+    private func shareImage(image: UIImage) {
+        let item: [Any] = [image]
+        let ac = UIActivityViewController(activityItems: item, applicationActivities: nil)
+        self.present(ac, animated: true)
     }
 }
 
