@@ -32,6 +32,7 @@ class DrawController: UIViewController {
     
     func setupImage() {
         if let image = draw?.image {
+            canvasView.addSubview(imageView)
             imageView.image = image
         }
     }

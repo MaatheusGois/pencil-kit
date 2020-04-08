@@ -26,8 +26,10 @@ class Canvas: PKCanvasView {
     }
     
     func setUp() {
-        bouncesZoom = true
-        bounces = true
+        minimumZoomScale = 1
+        maximumZoomScale = 5
+                
+    
         allowsFingerDrawing = true
         isRulerActive = false
         backgroundColor = .clear
@@ -51,5 +53,15 @@ class Canvas: PKCanvasView {
 extension Canvas: PKCanvasViewDelegate {
     func canvasViewDidEndUsingTool(_ canvasView: PKCanvasView) {
         print("here")
+    }
+}
+
+extension Canvas: UIScrollViewDelegate {
+    func viewForZooming(in scrollView: UIScrollView) -> UIView? {
+        return view
+    }
+    
+    func scrollViewDidZoom(_ scrollView: UIScrollView) {
+        print(scrollView)
     }
 }

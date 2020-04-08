@@ -23,7 +23,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		8283B101243CE754008733C8 /* PencilKitTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PencilKitTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		8283B101243CE754008733C8 /* TINA.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TINA.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8283B104243CE754008733C8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8283B106243CE754008733C8 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		8283B108243CE754008733C8 /* DrawController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrawController.swift; sourceTree = "<group>"; };
@@ -63,7 +63,7 @@
 		8283B102243CE754008733C8 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				8283B101243CE754008733C8 /* PencilKitTest.app */,
+				8283B101243CE754008733C8 /* TINA.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -203,7 +203,7 @@
 			);
 			name = PencilKitTest;
 			productName = PencilKitTest;
-			productReference = 8283B101243CE754008733C8 /* PencilKitTest.app */;
+			productReference = 8283B101243CE754008733C8 /* TINA.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -421,7 +421,7 @@
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = maatheusgois.PencilKitTest;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = TINA;
 				SUPPORTS_MACCATALYST = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -443,7 +443,7 @@
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = maatheusgois.PencilKitTest;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = TINA;
 				SUPPORTS_MACCATALYST = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";

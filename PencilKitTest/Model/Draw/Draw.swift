@@ -15,24 +15,16 @@ struct Draw {
 }
 
 extension Draws {
-    static func getExamples() -> Draws {
-        guard let imageTest = UIImage(named: "test") else {
-            fatalError("Image not found")
+    static func getCollection_01() -> Draws {
+        var draws = Draws()
+        for index in 1...8 {
+            let name = "draw_00\(index)"
+            guard let image = UIImage(named: name) else {
+                fatalError("Image not found")
+            }
+            draws.append(Draw(name: name, image: image))
         }
-        return [
-            Draw(name: "test", image: imageTest),
-            Draw(name: "test", image: imageTest),
-            Draw(name: "test", image: imageTest),
-            Draw(name: "test", image: imageTest),
-            Draw(name: "test", image: imageTest),
-            Draw(name: "test", image: imageTest),
-            Draw(name: "test", image: imageTest),
-            Draw(name: "test", image: imageTest),
-            Draw(name: "test", image: imageTest),
-            Draw(name: "test", image: imageTest),
-            Draw(name: "test", image: imageTest),
-            Draw(name: "test", image: imageTest),
-        ]
+        return draws
     }
 }
 

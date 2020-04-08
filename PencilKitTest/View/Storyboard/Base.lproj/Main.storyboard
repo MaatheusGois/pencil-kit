@@ -15,6 +15,9 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="background_val" translatesAutoresizingMaskIntoConstraints="NO" id="e5i-Sd-hcq">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                            </imageView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="TeS-Bd-n3g">
                                 <rect key="frame" x="20" y="168" width="374" height="734"/>
                                 <subviews>
@@ -35,7 +38,11 @@
                         </subviews>
                         <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="e5i-Sd-hcq" firstAttribute="top" secondItem="v8Q-pd-xOn" secondAttribute="top" id="0wB-PU-1LK"/>
                             <constraint firstItem="TeS-Bd-n3g" firstAttribute="leading" secondItem="7Bf-cZ-2VM" secondAttribute="leading" constant="20" id="EKv-LJ-DFg"/>
+                            <constraint firstItem="e5i-Sd-hcq" firstAttribute="leading" secondItem="7Bf-cZ-2VM" secondAttribute="leading" id="NZf-Fi-jUW"/>
+                            <constraint firstAttribute="bottom" secondItem="e5i-Sd-hcq" secondAttribute="bottom" id="Ot1-0K-bwS"/>
+                            <constraint firstItem="7Bf-cZ-2VM" firstAttribute="trailing" secondItem="e5i-Sd-hcq" secondAttribute="trailing" id="VBJ-c5-69i"/>
                             <constraint firstItem="7Bf-cZ-2VM" firstAttribute="bottom" secondItem="TeS-Bd-n3g" secondAttribute="bottom" constant="-40" id="YiR-eE-VBh"/>
                             <constraint firstItem="TeS-Bd-n3g" firstAttribute="top" secondItem="7Bf-cZ-2VM" secondAttribute="top" constant="80" id="dmm-ca-Twe"/>
                             <constraint firstItem="7Bf-cZ-2VM" firstAttribute="trailing" secondItem="TeS-Bd-n3g" secondAttribute="trailing" constant="20" id="wFY-jh-x2r"/>
@@ -43,6 +50,7 @@
                         <viewLayoutGuide key="safeArea" id="7Bf-cZ-2VM"/>
                     </view>
                     <navigationItem key="navigationItem" id="dVb-qN-LjZ"/>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <connections>
                         <outlet property="collectionView" destination="cus-lR-ka3" id="196-7k-Or7"/>
                         <segue destination="BYZ-38-t0r" kind="show" identifier="toDraw" id="XLM-N4-JpK"/>
@@ -60,16 +68,16 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="test" translatesAutoresizingMaskIntoConstraints="NO" id="pLa-AG-dqE">
-                                <rect key="frame" x="20" y="156" width="374" height="356"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.0" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="test" translatesAutoresizingMaskIntoConstraints="NO" id="pLa-AG-dqE">
+                                <rect key="frame" x="20" y="297" width="374" height="356"/>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="pLa-AG-dqE" secondAttribute="trailing" constant="20" id="2HW-rM-5iG"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="pLa-AG-dqE" secondAttribute="bottom" constant="350" id="Ths-9A-tiW"/>
-                            <constraint firstItem="pLa-AG-dqE" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="68" id="hNV-uB-vbT"/>
-                            <constraint firstItem="pLa-AG-dqE" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="ytr-jg-L4g"/>
+                            <constraint firstItem="pLa-AG-dqE" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" multiplier="0.903382" id="QKj-lm-c6Y"/>
+                            <constraint firstItem="pLa-AG-dqE" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="Sam-F5-Ehz"/>
+                            <constraint firstItem="pLa-AG-dqE" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="0.397321" id="aQ6-K3-HKa"/>
+                            <constraint firstItem="pLa-AG-dqE" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="okl-Xn-nGF"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
@@ -87,11 +95,15 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="oFW-aj-YuG" sceneMemberID="viewController">
                     <toolbarItems/>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Oyi-r3-90T">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
+                    <toolbar key="toolbar" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="SPG-Mo-6we">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </toolbar>
                     <connections>
                         <segue destination="cWH-YY-oFR" kind="relationship" relationship="rootViewController" id="ZaE-pp-7EL"/>
                     </connections>
@@ -102,6 +114,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="background_val" width="414" height="896"/>
         <image name="test" width="800" height="722"/>
     </resources>
 </document>
